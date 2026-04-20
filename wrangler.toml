@@ -1,0 +1,6 @@
+name = "ya-ace-media-new"
+pages_build_output_dir = "./dist"
+
+[vars]
+# You can add environment variables here for Cloudflare
+# GEMINI_API_KEY = "your-key-here"
