@@ -555,27 +555,45 @@ function ScrollToTop() {
 function Layout({ children, lang, setLang, isRtl, t }: any) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const prefix = lang === 'en' ? '/en' : '';
+  const getPath = (path: string) => {
+    if (path === '/') return prefix === '' ? '/' : prefix;
+    return `${prefix}${path}`;
+  };
+
+  const toggleLang = () => {
+    const newLang = lang === 'he' ? 'en' : 'he';
+    const currentPath = location.pathname;
+    
+    if (newLang === 'en') {
+      navigate(`/en${currentPath}`);
+    } else {
+      navigate(currentPath.replace(/^\/en/, '') || '/');
+    }
+  };
 
   return (
     <div className={`min-h-screen font-sans selection:bg-blue-500/30 ${isRtl ? 'rtl' : 'ltr'}`} dir={isRtl ? 'rtl' : 'ltr'}>
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-brand-dark/50 backdrop-blur-md border-b border-white/5">
         <div className="max-w-7xl mx-auto px-12 h-24 flex items-center justify-between">
-          <Link to="/" className="text-2xl font-black tracking-tighter text-white">
+          <Link to={getPath('/')} className="text-2xl font-black tracking-tighter text-white">
             YA-ACE <span className="text-blue-500 underline decoration-2 underline-offset-4">MEDIA</span>
           </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8 text-sm font-medium uppercase tracking-widest opacity-70">
-            <Link to="/" className={`hover:text-blue-400 transition-colors ${location.pathname === '/' ? 'text-blue-400 opacity-100' : ''}`}>{t.nav.home}</Link>
-            <Link to="/services" className={`hover:text-blue-400 transition-colors ${location.pathname === '/services' ? 'text-blue-400 opacity-100' : ''}`}>{t.nav.services}</Link>
-            <Link to="/case-studies" className={`hover:text-blue-400 transition-colors ${location.pathname === '/case-studies' ? 'text-blue-400 opacity-100' : ''}`}>{t.nav.portfolio}</Link>
-            <Link to="/about" className={`hover:text-blue-400 transition-colors ${location.pathname === '/about' ? 'text-blue-400 opacity-100' : ''}`}>{t.nav.about}</Link>
-            <Link to="/calculator" className={`hover:text-blue-400 transition-colors ${location.pathname === '/calculator' ? 'text-blue-400 opacity-100' : ''}`}>{t.nav.calculator}</Link>
-            <Link to="/contact" className={`hover:text-blue-400 transition-colors ${location.pathname === '/contact' ? 'text-blue-400 opacity-100' : ''}`}>{t.nav.contact}</Link>
+            <Link to={getPath('/')} className={`hover:text-blue-400 transition-colors ${location.pathname === getPath('/') ? 'text-blue-400 opacity-100' : ''}`}>{t.nav.home}</Link>
+            <Link to={getPath('/services')} className={`hover:text-blue-400 transition-colors ${location.pathname === getPath('/services') ? 'text-blue-400 opacity-100' : ''}`}>{t.nav.services}</Link>
+            <Link to={getPath('/case-studies')} className={`hover:text-blue-400 transition-colors ${location.pathname === getPath('/case-studies') ? 'text-blue-400 opacity-100' : ''}`}>{t.nav.portfolio}</Link>
+            <Link to={getPath('/about')} className={`hover:text-blue-400 transition-colors ${location.pathname === getPath('/about') ? 'text-blue-400 opacity-100' : ''}`}>{t.nav.about}</Link>
+            <Link to={getPath('/calculator')} className={`hover:text-blue-400 transition-colors ${location.pathname === getPath('/calculator') ? 'text-blue-400 opacity-100' : ''}`}>{t.nav.calculator}</Link>
+            <Link to={getPath('/contact')} className={`hover:text-blue-400 transition-colors ${location.pathname === getPath('/contact') ? 'text-blue-400 opacity-100' : ''}`}>{t.nav.contact}</Link>
             
             <button 
-              onClick={() => setLang(lang === 'he' ? 'en' : 'he')}
+              onClick={toggleLang}
               className="flex items-center gap-2 px-3 py-1 glass rounded-full hover:bg-white/10 transition-colors ml-4"
             >
               <Languages size={14} className="text-blue-400" />
@@ -596,14 +614,14 @@ function Layout({ children, lang, setLang, isRtl, t }: any) {
             animate={{ opacity: 1, y: 0 }}
             className="md:hidden absolute top-24 left-0 w-full bg-brand-dark border-b border-white/10 px-12 py-10 flex flex-col gap-6"
           >
-            <Link to="/" onClick={() => setIsMenuOpen(false)} className="text-xl uppercase tracking-widest font-bold">{t.nav.home}</Link>
-            <Link to="/services" onClick={() => setIsMenuOpen(false)} className="text-xl uppercase tracking-widest font-bold">{t.nav.services}</Link>
-            <Link to="/case-studies" onClick={() => setIsMenuOpen(false)} className="text-xl uppercase tracking-widest font-bold">{t.nav.portfolio}</Link>
-            <Link to="/about" onClick={() => setIsMenuOpen(false)} className="text-xl uppercase tracking-widest font-bold">{t.nav.about}</Link>
-            <Link to="/calculator" onClick={() => setIsMenuOpen(false)} className="text-xl uppercase tracking-widest font-bold">{t.nav.calculator}</Link>
-            <Link to="/contact" onClick={() => setIsMenuOpen(false)} className="text-xl uppercase tracking-widest font-bold">{t.nav.contact}</Link>
+            <Link to={getPath('/')} onClick={() => setIsMenuOpen(false)} className="text-xl uppercase tracking-widest font-bold">{t.nav.home}</Link>
+            <Link to={getPath('/services')} onClick={() => setIsMenuOpen(false)} className="text-xl uppercase tracking-widest font-bold">{t.nav.services}</Link>
+            <Link to={getPath('/case-studies')} onClick={() => setIsMenuOpen(false)} className="text-xl uppercase tracking-widest font-bold">{t.nav.portfolio}</Link>
+            <Link to={getPath('/about')} onClick={() => setIsMenuOpen(false)} className="text-xl uppercase tracking-widest font-bold">{t.nav.about}</Link>
+            <Link to={getPath('/calculator')} onClick={() => setIsMenuOpen(false)} className="text-xl uppercase tracking-widest font-bold">{t.nav.calculator}</Link>
+            <Link to={getPath('/contact')} onClick={() => setIsMenuOpen(false)} className="text-xl uppercase tracking-widest font-bold">{t.nav.contact}</Link>
             <button 
-              onClick={() => { setLang(lang === 'he' ? 'en' : 'he'); setIsMenuOpen(false); }}
+              onClick={() => { toggleLang(); setIsMenuOpen(false); }}
               className="flex items-center gap-3 text-xl uppercase tracking-widest font-bold text-blue-400"
             >
               <Languages size={20} />
@@ -1286,17 +1304,45 @@ export default function App() {
         {JSON.stringify(jsonLd)}
       </script>
       <ScrollToTop />
-      <Layout lang={lang} setLang={setLang} isRtl={isRtl} t={t}>
-        <Routes>
-          <Route path="/" element={<Home t={t} isRtl={isRtl} />} />
-          <Route path="/services" element={<Services t={t} />} />
-          <Route path="/case-studies" element={<CaseStudies t={t} />} />
-          <Route path="/case-studies/:slug" element={<CaseStudyDetail t={t} />} />
-          <Route path="/about" element={<About t={t} />} />
-          <Route path="/contact" element={<Contact t={t} />} />
-          <Route path="/calculator" element={<Calculator t={t} />} />
-        </Routes>
-      </Layout>
+      <LanguageProvider lang={lang} setLang={setLang}>
+        <Layout lang={lang} setLang={setLang} isRtl={isRtl} t={t}>
+          <Routes>
+            {/* Hebrew Routes (Default) */}
+            <Route path="/" element={<Home t={t} isRtl={isRtl} />} />
+            <Route path="/services" element={<Services t={t} />} />
+            <Route path="/case-studies" element={<CaseStudies t={t} />} />
+            <Route path="/case-studies/:slug" element={<CaseStudyDetail t={t} />} />
+            <Route path="/about" element={<About t={t} />} />
+            <Route path="/contact" element={<Contact t={t} />} />
+            <Route path="/calculator" element={<Calculator t={t} />} />
+
+            {/* English Routes */}
+            <Route path="/en" element={<Home t={translations.en} isRtl={false} />} />
+            <Route path="/en/services" element={<Services t={translations.en} />} />
+            <Route path="/en/case-studies" element={<CaseStudies t={translations.en} />} />
+            <Route path="/en/case-studies/:slug" element={<CaseStudyDetail t={translations.en} />} />
+            <Route path="/en/about" element={<About t={translations.en} />} />
+            <Route path="/en/contact" element={<Contact t={translations.en} />} />
+            <Route path="/en/calculator" element={<Calculator t={translations.en} />} />
+          </Routes>
+        </Layout>
+      </LanguageProvider>
     </BrowserRouter>
   );
+}
+
+function LanguageProvider({ children, lang, setLang }: { children: React.ReactNode, lang: Lang, setLang: (l: Lang) => void }) {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const isEn = location.pathname.startsWith('/en');
+    if (isEn && lang !== 'en') {
+      setLang('en');
+    } else if (!isEn && lang !== 'he') {
+      setLang('he');
+    }
+  }, [location.pathname]);
+
+  return <>{children}</>;
 }
