@@ -41,13 +41,13 @@ const translations = {
       solution_text: "פיתוח ב-Next.js ואופטימיזציית SEO מקומית מעמיקה הכוללת ניהול פרופיל עסק בגוגל (GMB).",
       result_text: "עלייה משמעותית בכמות הלידים, שיפור במהירות הטעינה ודירוגים גבוהים בביטויי מפתח קריטיים.",
     },
-    hero: {
-      badge: "Boutique Digital Agency",
-      title: "אתרים שגוגל אוהב.<br/>לקוחות שמתקשרים.",
-      desc: "אני יוסי, מפתח ומשווק עצמאי. אני בונה אתרי Next.js מהירים במיוחד ומייצר לידים דרך Local SEO מדויק לעסקים בישראל ובארה״ב. מודל בוטיק של אדם אחד שעובד ישירות מולך.",
-      cta_primary: "דברו איתי בוואטסאפ",
-      cta_secondary: "הסיפור שלי",
-    },
+      hero: {
+        badge: "Boutique Digital Agency",
+        title: "אתרים שגוגל אוהב.<br/>לקוחות שמתקשרים.",
+        desc: "אני יוסי, מפתח ומשווק עצמאי. אני בונה אתרי Next.js מהירים במיוחד ומייצר לידים דרך Local SEO מדויק לעסקים בישראל (תל אביב, הרצליה, חיפה) ובארה״ב. מודל בוטיק של אדם אחד שעובד ישירות מולך להשגת מקסימום ROI.",
+        cta_primary: "דברו איתי בוואטסאפ",
+        cta_secondary: "הסיפור שלי",
+      },
     services_brief: [
       { 
         id: "01", 
@@ -145,9 +145,10 @@ const translations = {
       { name: "Hummus Ashkara", text: "סוף סוף רואים אותנו במפות כשמחפשים חומוס בתל אביב. שירות מעולה.", role: "Manager" }
     ],
     faq: [
-      { q: "כמה זמן לוקח לראות תוצאות SEO?", a: "בדרך כלל רואים שיפור ראשוני תוך 2-4 חודשים, אך תוצאות משמעותיות דורשות 6-12 חודשי עבודה רציפה." },
-      { q: "למה Next.js טוב יותר ל-SEO?", a: "מכיוון שהוא מאפשר טעינה מהירה מאוד ואינדוקס מושלם על ידי גוגל בהשוואה לטכנולוגיות אחרות." },
-      { q: "איך עובד הקידום המקומי?", a: "אנחנו מבצעים אופטימיזציה של ה-Google Business Profile שלכם ומייצרים נוכחות חזקה במפות ובחיפושים מקומיים." }
+      { q: "כמה זמן לוקח לראות תוצאות SEO?", a: "בדרך כלל רואים שיפור ראשוני תוך 2-4 חודשים. בשווקים תחרותיים כמו מנעולנות בארה״ב, תוצאות משמעותיות דורשות 6-12 חודשי עבודה רציפה." },
+      { q: "למה Next.js טוב יותר ל-SEO?", a: "מכיוון שהוא מאפשר טעינה מהירה מאוד (PSI 95+) ואינדוקס מושלם על ידי גוגל. מהירות האתר היא פקטור דירוג קריטי בשנת 2024." },
+      { q: "איך עובד הקידום המקומי (Local SEO)?", a: "אנחנו מבצעים אופטימיזציה של ה-Google Business Profile שלכם, מטפלים בספאם של מתחרים ומייצרים נוכחות חזקה ב-Map Pack ובחיפושים מקומיים." },
+      { q: "מה זה GEO ואיך זה עוזר לעסק שלי?", a: "Generative Engine Optimization הוא קידום במנועי חיפוש מבוססי AI. אנחנו עוזרים לעסק שלכם להופיע כתשובה המומלצת ב-ChatGPT, Gemini ו-Perplexity." }
     ],
     portfolio: {
       title: "הפרויקטים <br /> <span class='text-blue-500 italic'>שלנו</span>",
@@ -157,7 +158,7 @@ const translations = {
           slug: "eagle-locksmith",
           title: "Eagle Locksmith", 
           tags: ["Local SEO", "GMB", "Dev"], 
-          image: "https://images.unsplash.com/photo-1614018424754-688ac332cc8a?auto=format&fit=crop&w=800&q=80", 
+          image: "https://images.unsplash.com/photo-1591123720164-de1348b2c4da?auto=format&fit=crop&w=800&q=80", 
           link: "https://www.eaglelocksmithservice.com/",
           fullDesc: "קידום מקומי מאסיבי למנעולן בארה״ב (MD, DC, VA), אופטימיזציית GMB ושיפור יחס המרה בשוק תחרותי במיוחד.",
           challenge: "תחרות קיצונית באזור עיר הבירה (DMV), צורך במתן מענה 24/7 ונוכחות חזקה מול רשתות ענק.",
@@ -181,7 +182,7 @@ const translations = {
           slug: "eagle-garage-door",
           title: "Eagle Garage Door Services", 
           tags: ["SEO", "Lead Gen", "Garage"], 
-          image: "https://images.unsplash.com/photo-1558211516-17b5e43a859e?auto=format&fit=crop&w=800&q=80",
+          image: "https://images.unsplash.com/photo-1621905235210-9080c3e6601f?auto=format&fit=crop&w=800&q=80",
           link: "https://eaglegaragedoorservices.com/",
           fullDesc: "שיפור נוכחות דיגיטלית וייצור לידים איכותיים עבור שירותי דלתות מוסך במרילנד.",
           challenge: "כיסוי גיאוגרפי רחב (30+ ערים) וצורך בדפי נחיתה ספציפיים לכל אזור.",
@@ -217,7 +218,7 @@ const translations = {
           slug: "locksmiths-colorado-springs",
           title: "Locksmiths Of Colorado Springs", 
           tags: ["Local SEO", "GMB", "Maps"], 
-          image: "https://images.unsplash.com/photo-1614018424754-688ac332cc8a?auto=format&fit=crop&w=800&q=80",
+          image: "https://images.unsplash.com/photo-1605380591742-835639695d85?auto=format&fit=crop&w=800&q=80",
           link: "https://colorado-locksmith.com/",
           fullDesc: "השתלטות על תוצאות החיפוש המקומיות (Map Pack) באזור קולורדו ספרינגס עבור מותג ותיק הפועל מאז 2008.",
           challenge: "ביסוס דומיננטיות בשוק צפוף בקולורדו ספרינגס מול מאות מתחרים, תוך שימור מוניטין של למעלה מעשור.",
@@ -229,7 +230,7 @@ const translations = {
           slug: "colorado-dependable-locksmith",
           title: "Colorado Dependable Locksmith", 
           tags: ["Technical SEO", "Highlands Ranch"], 
-          image: "https://images.unsplash.com/photo-1614018424754-688ac332cc8a?auto=format&fit=crop&w=800&q=80",
+          image: "https://images.unsplash.com/photo-1517646272502-78c392f432a5?auto=format&fit=crop&w=800&q=80",
           link: "https://coloradodependablelocksmith.com/",
           fullDesc: "אופטימיזציה טכנית וקידום ממוקד אזור (Highlands Ranch) עבור שירותי מנעולנות באזור דנבר רבתי.",
           challenge: "פריצה לשווקי נישה גיאוגרפיים דרומית לדנבר ויצירת סמכות כשירות מנעולנות אמין ומהיר (7 בבוקר עד חצות).",
@@ -239,13 +240,13 @@ const translations = {
         },
         { 
           slug: "protecvault",
-          title: "ProtecVault", 
+          title: "ProtecVault (NanoBanana)", 
           tags: ["E-commerce", "Collectors"], 
-          image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80",
+          image: "https://images.unsplash.com/photo-1613771404721-1f92d799e49f?auto=format&fit=crop&w=800&q=80",
           link: "https://protecvault.com/",
-          fullDesc: "פיתוח פלטפורמת איקומרס מהירה לאביזרי אספנות (קלפי מסחר) בשוק האמריקאי.",
-          challenge: "יצירת אמון מול קהילת אספנים דקדקנית וצורך בחוויית רכישה חלקה.",
-          solution: "בניית דף נחיתה ממוקד מוצר with accent on quality (PVC-Free) and loading speed.",
+          fullDesc: "פיתוח פלטפורמת איקומרס מהירה לאביזרי אספנות (קלפי מסחר) בשוק האמריקאי עבור המותג NanoBanana.",
+          challenge: "יצירת אמון מול קהילת אספנים דקדקנית וצורך בחוויית רכישה חלקה עבור מוצרי פרימיום.",
+          solution: "בניית אתר Next.js ממוקד המרות עם דגש על איכות (PVC-Free) ומהירות טעינה מקסימלית.",
           result: "אחוז המרה גבוה (CR) וציוני ביצועים כמעט מושלמים.",
           psi: "99"
         },
@@ -301,13 +302,13 @@ const translations = {
       solution_text: "Developing in Next.js and deep local SEO optimization including Google Business Profile (GMB) management.",
       result_text: "Significant increase in lead volume, improved loading speed, and high rankings for critical keywords.",
     },
-    hero: {
-      badge: "Boutique Digital Agency",
-      title: "Sites Google Loves.<br/>Clients Who Call.",
-      desc: "I'm Yossi, an independent developer and marketer. I build ultra-fast Next.js sites and generate leads through precision Local SEO for businesses in Israel and the US. A one-man boutique model working directly with you.",
-      cta_primary: "WhatsApp Me",
-      cta_secondary: "My Story",
-    },
+      hero: {
+        badge: "Boutique Digital Agency",
+        title: "Sites Google Loves.<br/>Clients Who Call.",
+        desc: "I'm Yossi, an independent developer and marketer. I build ultra-fast Next.js sites and generate leads through precision Local SEO for businesses in Israel and the US (Maryland, Colorado, Florida). A one-man boutique model working directly with you for maximum ROI.",
+        cta_primary: "WhatsApp Me",
+        cta_secondary: "My Story",
+      },
     services_brief: [
       { 
         id: "01", 
@@ -403,9 +404,10 @@ In 2018, I started working with a US locksmith client, which was a gateway to a 
       { name: "Hummus Ashkara", text: "Finally we are visible on maps when searching for hummus in TLV. Great service.", role: "Manager" }
     ],
     faq: [
-      { q: "How long to see SEO results?", a: "Initial improvements in 2-4 months, significant results in 6-12 months." },
-      { q: "Why Next.js for SEO?", a: "Extreme speed and perfect indexing compared to other tech." },
-      { q: "How does Local SEO work?", a: "We optimize your GMB profile and build strong presence in maps and local search." }
+      { q: "How long to see SEO results?", a: "Initial improvements in 2-4 months. In competitive niches like Locksmiths in the US, significant results take 6-12 months of consistent optimization." },
+      { q: "Why Next.js for SEO?", a: "Extreme speed (PSI 95+) and perfect indexing. Page speed is a critical ranking factor in 2024, directly impacting conversion rates." },
+      { q: "How does Local SEO work?", a: "We optimize your GMB profile, combat competitor spam, and build a strong presence in the Google Map Pack and local searches." },
+      { q: "What is GEO and how does it help?", a: "Generative Engine Optimization focuses on AI-based search. We ensure your business is recommended as the top answer by AI models like ChatGPT and Gemini." }
     ],
     portfolio: {
       title: "Our <br /> <span class='text-blue-500 italic'>Case Studies</span>",
@@ -415,7 +417,7 @@ In 2018, I started working with a US locksmith client, which was a gateway to a 
           slug: "eagle-locksmith",
           title: "Eagle Locksmith", 
           tags: ["Local SEO", "GMB", "Dev"], 
-          image: "https://images.unsplash.com/photo-1614018424754-688ac332cc8a?auto=format&fit=crop&w=800&q=80", 
+          image: "https://images.unsplash.com/photo-1591123720164-de1348b2c4da?auto=format&fit=crop&w=800&q=80", 
           link: "https://www.eaglelocksmithservice.com/",
           fullDesc: "Massive local SEO push for a US locksmith (MD, DC, VA), GMB optimization, and conversion improvements in an ultra-competitive market.",
           challenge: "Extreme competition in the DMV area, requiring a 24/7 response and strong presence against national chains.",
@@ -475,7 +477,7 @@ In 2018, I started working with a US locksmith client, which was a gateway to a 
           slug: "locksmiths-colorado-springs",
           title: "Locksmiths Of Colorado Springs", 
           tags: ["Local SEO", "GMB", "Maps"], 
-          image: "https://images.unsplash.com/photo-1614018424754-688ac332cc8a?q=80&w=800&auto=format&fit=crop",
+          image: "https://images.unsplash.com/photo-1605380591742-835639695d85?q=80&w=800&auto=format&fit=crop",
           link: "https://colorado-locksmith.com/",
           fullDesc: "Dominating local search results (Map Pack) in Colorado Springs for an established brand operating since 2008.",
           challenge: "Establishing dominance in a saturated market against hundreds of competitors while maintaining a reputation of over a decade.",
@@ -487,7 +489,7 @@ In 2018, I started working with a US locksmith client, which was a gateway to a 
           slug: "colorado-dependable-locksmith",
           title: "Colorado Dependable Locksmith", 
           tags: ["Technical SEO", "Highlands Ranch"], 
-          image: "https://images.unsplash.com/photo-1614018424754-688ac332cc8a?auto=format&fit=crop&w=800&q=80",
+          image: "https://images.unsplash.com/photo-1517646272502-78c392f432a5?auto=format&fit=crop&w=800&q=80",
           link: "https://coloradodependablelocksmith.com/",
           fullDesc: "Technical optimization and geo-targeted SEO (Highlands Ranch) for locksmith services in the Greater Denver area.",
           challenge: "Breaking into niche geographic markets south of Denver and building authority as a reliable, fast service (7 AM - Midnight).",
@@ -497,13 +499,13 @@ In 2018, I started working with a US locksmith client, which was a gateway to a 
         },
         { 
           slug: "protecvault",
-          title: "ProtecVault", 
+          title: "ProtecVault (NanoBanana)", 
           tags: ["E-commerce", "Collectors"], 
-          image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80",
+          image: "https://images.unsplash.com/photo-1613771404721-1f92d799e49f?auto=format&fit=crop&w=800&q=80",
           link: "https://protecvault.com/",
-          fullDesc: "High-speed e-commerce platform for collectibles (trading cards) in the US market.",
-          challenge: "Creating trust with a meticulous collector community and needing a seamless checkout flow.",
-          solution: "Product-focused landing page emphasizing quality (PVC-Free) and loading speed.",
+          fullDesc: "High-speed e-commerce platform for collectibles (trading cards) in the US market for the NanoBanana brand.",
+          challenge: "Building trust within a meticulous collector community requiring a seamless purchasing flow for premium accessories.",
+          solution: "High-performance Next.js site emphasizing quality (PVC-Free), durability, and ultra-fast loading speed.",
           result: "High Conversion Rate (CR) and near-perfect performance scores.",
           psi: "99"
         },
@@ -912,7 +914,7 @@ function About({ t }: any) {
           className="lg:col-span-7 space-y-12"
         >
           <div className="space-y-6">
-            <span className="text-blue-500 font-bold uppercase tracking-[0.4em] text-xs">The Founder Journey</span>
+            <span className="text-blue-500 font-bold uppercase tracking-[0.4em] text-xs">Innovation & Growth</span>
             <h1 
               className="text-6xl lg:text-7xl font-black tracking-tighter text-white uppercase leading-[0.9] accent-glow"
               dangerouslySetInnerHTML={{ __html: t.about.title }}
@@ -923,11 +925,12 @@ function About({ t }: any) {
           <div className="space-y-8">
             <div className="space-y-3">
                <h2 className="text-3xl font-bold text-blue-400 italic">{t.about.founder.title}</h2>
-               <p className="text-xl text-white font-medium bg-white/5 py-3 px-6 rounded-2xl border-l-4 border-blue-500">{t.about.founder.bio}</p>
+               <p className="text-xl text-white font-medium bg-white/5 py-4 px-8 rounded-3xl border-l-4 border-blue-500 shadow-2xl shadow-blue-500/5 leading-relaxed">{t.about.founder.bio}</p>
             </div>
-            <p className="text-gray-400 leading-relaxed text-lg max-w-2xl">
-              {t.about.founder.fullDesc}
-            </p>
+            <div className="space-y-6 text-gray-400 leading-relaxed text-lg max-w-2xl bg-white/5 p-8 rounded-[40px] border border-white/5">
+              <p>{t.about.story.content}</p>
+              <p className="border-t border-white/10 pt-6 font-medium italic text-blue-400">{t.about.model.content}</p>
+            </div>
           </div>
           
           <div className="flex gap-12 pt-4">
@@ -1141,9 +1144,12 @@ function Calculator({ t }: any) {
       </div>
       
       <div className="text-center">
-        <Link to="/contact" className="inline-block bg-blue-600 hover:bg-blue-500 text-white px-12 py-5 rounded-2xl font-black uppercase tracking-widest transition-all">
+        <button 
+          onClick={() => navigate('/contact')}
+          className="inline-block bg-blue-600 hover:bg-blue-500 text-white px-12 py-5 rounded-2xl font-black uppercase tracking-widest transition-all shadow-xl shadow-blue-600/20"
+        >
           Get Your Full Audit
-        </Link>
+        </button>
       </div>
     </div>
   );
@@ -1208,16 +1214,23 @@ function CaseStudyDetail({ t }: any) {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-12 border-t border-white/5">
         <div className="glass p-8 rounded-3xl space-y-4">
           <h3 className="font-bold text-white uppercase tracking-widest text-xs text-blue-400">{t.nav.challenge}</h3>
-          <p className="text-sm text-gray-500">{project.challenge || t.nav.challenge_text}</p>
+          <p className="text-sm text-gray-500 leading-relaxed">{project.challenge || t.nav.challenge_text}</p>
         </div>
         <div className="glass p-8 rounded-3xl space-y-4">
           <h3 className="font-bold text-white uppercase tracking-widest text-xs text-blue-400">{t.nav.solution}</h3>
-          <p className="text-sm text-gray-500">{project.solution || t.nav.solution_text}</p>
+          <p className="text-sm text-gray-500 leading-relaxed">{project.solution || t.nav.solution_text}</p>
         </div>
         <div className="glass p-8 rounded-3xl space-y-4">
           <h3 className="font-bold text-white uppercase tracking-widest text-xs text-blue-400">{t.nav.result}</h3>
-          <p className="text-sm text-gray-500">{project.result || t.nav.result_text}</p>
+          <p className="text-sm text-gray-500 leading-relaxed">{project.result || t.nav.result_text}</p>
         </div>
+      </div>
+
+      <div className="pt-20 text-center space-y-8">
+        <h4 className="text-gray-500 uppercase tracking-[0.3em] text-[10px] font-bold">Ready to achieve similar results?</h4>
+        <Link to="/contact" className="inline-block bg-blue-600 hover:bg-blue-500 text-white px-12 py-5 rounded-2xl font-black uppercase tracking-widest transition-all shadow-xl shadow-blue-600/20">
+          Start Your Project
+        </Link>
       </div>
     </div>
   );
