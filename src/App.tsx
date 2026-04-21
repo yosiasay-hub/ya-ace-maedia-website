@@ -16,7 +16,7 @@ import {
   Users,
   Target
 } from "lucide-react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Link, useLocation, useParams, useNavigate } from "react-router-dom";
 
 type Lang = 'he' | 'en';
@@ -61,7 +61,7 @@ const translations = {
         id: "02", 
         title: "GEO & AI", 
         desc: "אופטימיזציה לחיפושי AI (GEO) שתביא את הלקוחות ישר אליכם.", 
-        longDesc: "העולם עובר לחיפושים מבוססי AI. אנחנו מבצעים אופטימיזציה שגורמת למודלים כמו ChatGPT ו-Google Gemini להמליץ על העסק שלכם בתור התשובה הטובה ביותר.",
+        longDesc: "העולם עובר לחיפושים מבוססי AI. אנחנו מבצעים אופטימיזציה שגורמת למודלים כמו ChatGPT ונועי חיפוש מתקדמים להמליץ על העסק שלכם בתור התשובה הטובה ביותר.",
         features: ["SGE Optimization", "AI Engine Rankings", "Prompt Engineering", "SEO מבוסס הקשר"],
         color: "indigo", rot: "rotate-2", mt: "mt-8" 
       },
@@ -148,7 +148,7 @@ const translations = {
       { q: "כמה זמן לוקח לראות תוצאות SEO?", a: "בדרך כלל רואים שיפור ראשוני תוך 2-4 חודשים. בשווקים תחרותיים כמו מנעולנות בארה״ב, תוצאות משמעותיות דורשות 6-12 חודשי עבודה רציפה." },
       { q: "למה Next.js טוב יותר ל-SEO?", a: "מכיוון שהוא מאפשר טעינה מהירה מאוד (PSI 95+) ואינדוקס מושלם על ידי גוגל. מהירות האתר היא פקטור דירוג קריטי בשנת 2024." },
       { q: "איך עובד הקידום המקומי (Local SEO)?", a: "אנחנו מבצעים אופטימיזציה של ה-Google Business Profile שלכם, מטפלים בספאם של מתחרים ומייצרים נוכחות חזקה ב-Map Pack ובחיפושים מקומיים." },
-      { q: "מה זה GEO ואיך זה עוזר לעסק שלי?", a: "Generative Engine Optimization הוא קידום במנועי חיפוש מבוססי AI. אנחנו עוזרים לעסק שלכם להופיע כתשובה המומלצת ב-ChatGPT, Gemini ו-Perplexity." }
+      { q: "מה זה GEO ואיך זה עוזר לעסק שלי?", a: "Generative Engine Optimization הוא קידום במנועי חיפוש מבוססי AI. אנחנו עוזרים לעסק שלכם להופיע כתשובה המומלצת ב-ChatGPT ובמנועי חיפוש מתקדמים נוספים." }
     ],
     portfolio: {
       title: "הפרויקטים <br /> <span class='text-blue-500 italic'>שלנו</span>",
@@ -158,7 +158,7 @@ const translations = {
           slug: "eagle-locksmith",
           title: "Eagle Locksmith", 
           tags: ["Local SEO", "GMB", "Dev"], 
-          image: "https://images.unsplash.com/photo-1591123720164-de1348b2c4da?auto=format&fit=crop&w=800&q=80", 
+          image: "https://images.unsplash.com/photo-1558223616-a7dc424e6c7e?auto=format&fit=crop&w=800&q=80", 
           link: "https://www.eaglelocksmithservice.com/",
           fullDesc: "קידום מקומי מאסיבי למנעולן בארה״ב (MD, DC, VA), אופטימיזציית GMB ושיפור יחס המרה בשוק תחרותי במיוחד.",
           challenge: "תחרות קיצונית באזור עיר הבירה (DMV), צורך במתן מענה 24/7 ונוכחות חזקה מול רשתות ענק.",
@@ -170,7 +170,7 @@ const translations = {
           slug: "970-locksmith-fort-collins",
           title: "970 Locksmith Fort Collins", 
           tags: ["Next.js", "Local SEO", "Maps"], 
-          image: "https://images.unsplash.com/photo-1579208570378-8c970854bc23?auto=format&fit=crop&w=800&q=80", 
+          image: "https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=800&q=80", 
           link: "https://970locksmithservices.tech",
           fullDesc: "אתר ממוקד המרות למנעולן 24/7 בפורט קולינס, קולורדו. בנייה, עיצוב וקידום SEO מקומי.",
           challenge: "פריצה לשוק הרווי של צפון קולורדו מול עסקים ותיקים עם מאות ביקורות.",
@@ -182,7 +182,7 @@ const translations = {
           slug: "eagle-garage-door",
           title: "Eagle Garage Door Services", 
           tags: ["SEO", "Lead Gen", "Garage"], 
-          image: "https://images.unsplash.com/photo-1621905235210-9080c3e6601f?auto=format&fit=crop&w=800&q=80",
+          image: "https://images.unsplash.com/photo-1558034859-9988a8d116c9?auto=format&fit=crop&q=80&w=800",
           link: "https://eaglegaragedoorservices.com/",
           fullDesc: "שיפור נוכחות דיגיטלית וייצור לידים איכותיים עבור שירותי דלתות מוסך במרילנד.",
           challenge: "כיסוי גיאוגרפי רחב (30+ ערים) וצורך בדפי נחיתה ספציפיים לכל אזור.",
@@ -194,7 +194,7 @@ const translations = {
           slug: "kamaaina-locksmith",
           title: "Kama'aina Locksmith", 
           tags: ["Hawaii SEO", "Local Search"], 
-          image: "https://images.unsplash.com/photo-1540206351-d6465b3ac5c1?auto=format&fit=crop&w=800&q=80",
+          image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
           link: "https://golocksmithhonolulu.com/",
           fullDesc: "אסטרטגיית קידום מקומי ייחודית לשוק של הוואי (הונולולו ואוהו), דגש על חיפושי Mobile.",
           challenge: "שוק מבודד עם נאמנות גבוהה לעסקים מקומיים (Kama'aina) ותחרות מותגים לאומית.",
@@ -206,7 +206,7 @@ const translations = {
           slug: "garage-door-kingdom",
           title: "Garage Door Kingdom LLC", 
           tags: ["Branding", "SEO", "Florida"], 
-          image: "https://images.unsplash.com/photo-1599059021750-845100067305?auto=format&fit=crop&w=800&q=80",
+          image: "https://images.unsplash.com/photo-1599059021750-845100067305?auto=format&fit=crop&q=80&w=800",
           link: "https://garagedoorkingdomllc.biz/",
           fullDesc: "שיפור נוכחות דיגיטלית וייצור לידים איכותיים עבור שירותי דלתות מוסך, שערים וגדרות ב-Sunrise, פלורידה ובכל מחוז Broward.",
           challenge: "תחרות עזה בשוק של דרום פלורידה, צורך בבידול דרך התמחיות ספציפיות כמו דלתות עמידות להוריקנים (HVHZ).",
@@ -218,7 +218,7 @@ const translations = {
           slug: "locksmiths-colorado-springs",
           title: "Locksmiths Of Colorado Springs", 
           tags: ["Local SEO", "GMB", "Maps"], 
-          image: "https://images.unsplash.com/photo-1605380591742-835639695d85?auto=format&fit=crop&w=800&q=80",
+          image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80",
           link: "https://colorado-locksmith.com/",
           fullDesc: "השתלטות על תוצאות החיפוש המקומיות (Map Pack) באזור קולורדו ספרינגס עבור מותג ותיק הפועל מאז 2008.",
           challenge: "ביסוס דומיננטיות בשוק צפוף בקולורדו ספרינגס מול מאות מתחרים, תוך שימור מוניטין של למעלה מעשור.",
@@ -230,7 +230,7 @@ const translations = {
           slug: "colorado-dependable-locksmith",
           title: "Colorado Dependable Locksmith", 
           tags: ["Technical SEO", "Highlands Ranch"], 
-          image: "https://images.unsplash.com/photo-1517646272502-78c392f432a5?auto=format&fit=crop&w=800&q=80",
+          image: "https://images.unsplash.com/photo-1543165796-5426273fd303?auto=format&fit=crop&w=800&q=80",
           link: "https://coloradodependablelocksmith.com/",
           fullDesc: "אופטימיזציה טכנית וקידום ממוקד אזור (Highlands Ranch) עבור שירותי מנעולנות באזור דנבר רבתי.",
           challenge: "פריצה לשווקי נישה גיאוגרפיים דרומית לדנבר ויצירת סמכות כשירות מנעולנות אמין ומהיר (7 בבוקר עד חצות).",
@@ -266,7 +266,7 @@ const translations = {
           slug: "limor-asayag",
           title: "לימור אסייג - תיווך נדל\"ן", 
           tags: ["Real Estate", "Personal Branding"], 
-          image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80",
+          image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80",
           link: "https://limorasay.co.il/",
           fullDesc: "מיתוג אישי ובניית אתר מנוהל לבית תיווך נדל״ן מוביל בגבעתיים ותל אביב.",
           challenge: "שוק הנדל״ן דורש אמון אישי גבוה והצגה יוקרתית של נכסים.",
@@ -322,7 +322,7 @@ const translations = {
         id: "02", 
         title: "GEO & AI", 
         desc: "AI Search Optimization (GEO) to bring customers straight to you.", 
-        longDesc: "The world is shifting to AI-based searches. We perform optimization that makes models like ChatGPT and Google Gemini recommend your business as the best answer.",
+        longDesc: "The world is shifting to AI-based searches. We perform optimization that makes models like ChatGPT and advanced AI engines recommend your business as the best answer.",
         features: ["SGE Optimization", "AI Engine Rankings", "Prompt Engineering", "Contextual SEO"],
         color: "indigo", rot: "rotate-2", mt: "mt-8" 
       },
@@ -399,7 +399,7 @@ In 2018, I started working with a US locksmith client, which was a gateway to a 
       }
     },
     testimonials: [
-      { name: "Eagle Locksmith", text: "GMB results were amazing. Leads increased by 300% within two months.", role: "Owner" },
+      { name: "Eagle Locksmith", text: "Results were amazing. Leads increased by 300% within two months.", role: "Owner" },
       { name: "970 Locksmith", text: "The new site is lightning fast and SEO works exactly as promised.", role: "Marketing Director" },
       { name: "Hummus Ashkara", text: "Finally we are visible on maps when searching for hummus in TLV. Great service.", role: "Manager" }
     ],
@@ -407,7 +407,7 @@ In 2018, I started working with a US locksmith client, which was a gateway to a 
       { q: "How long to see SEO results?", a: "Initial improvements in 2-4 months. In competitive niches like Locksmiths in the US, significant results take 6-12 months of consistent optimization." },
       { q: "Why Next.js for SEO?", a: "Extreme speed (PSI 95+) and perfect indexing. Page speed is a critical ranking factor in 2024, directly impacting conversion rates." },
       { q: "How does Local SEO work?", a: "We optimize your GMB profile, combat competitor spam, and build a strong presence in the Google Map Pack and local searches." },
-      { q: "What is GEO and how does it help?", a: "Generative Engine Optimization focuses on AI-based search. We ensure your business is recommended as the top answer by AI models like ChatGPT and Gemini." }
+      { q: "What is GEO and how does it help?", a: "Generative Engine Optimization focuses on AI-based search. We ensure your business is recommended as the top answer by AI models like ChatGPT and other major search engines." }
     ],
     portfolio: {
       title: "Our <br /> <span class='text-blue-500 italic'>Case Studies</span>",
@@ -417,7 +417,7 @@ In 2018, I started working with a US locksmith client, which was a gateway to a 
           slug: "eagle-locksmith",
           title: "Eagle Locksmith", 
           tags: ["Local SEO", "GMB", "Dev"], 
-          image: "https://images.unsplash.com/photo-1591123720164-de1348b2c4da?auto=format&fit=crop&w=800&q=80", 
+          image: "https://images.unsplash.com/photo-1558223616-a7dc424e6c7e?auto=format&fit=crop&w=800&q=80", 
           link: "https://www.eaglelocksmithservice.com/",
           fullDesc: "Massive local SEO push for a US locksmith (MD, DC, VA), GMB optimization, and conversion improvements in an ultra-competitive market.",
           challenge: "Extreme competition in the DMV area, requiring a 24/7 response and strong presence against national chains.",
@@ -429,7 +429,7 @@ In 2018, I started working with a US locksmith client, which was a gateway to a 
           slug: "970-locksmith-fort-collins",
           title: "970 Locksmith Fort Collins", 
           tags: ["Next.js", "Local SEO", "Maps"], 
-          image: "https://images.unsplash.com/photo-1579208570378-8c970854bc23?auto=format&fit=crop&w=800&q=80", 
+          image: "https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=800&q=80", 
           link: "https://970locksmithservices.tech",
           fullDesc: "Conversion-focused site for a 24/7 locksmith in Fort Collins, Colorado. Building, design, and local SEO.",
           challenge: "Breaking into the saturated Northern Colorado market against established businesses with hundreds of reviews.",
@@ -441,7 +441,7 @@ In 2018, I started working with a US locksmith client, which was a gateway to a 
           slug: "eagle-garage-door",
           title: "Eagle Garage Door Services", 
           tags: ["SEO", "Lead Gen", "Garage"], 
-          image: "https://images.unsplash.com/photo-1444090542259-0af8fa96557e?auto=format&fit=crop&w=800&q=80",
+          image: "https://images.unsplash.com/photo-1558034859-9988a8d116c9?auto=format&fit=crop&w=800&q=80",
           link: "https://eaglegaragedoorservices.com/",
           fullDesc: "Enhancing digital presence and generating high-quality leads for garage door services in Maryland.",
           challenge: "Broad geographic coverage (30+ cities) requiring region-specific landing pages.",
@@ -453,7 +453,7 @@ In 2018, I started working with a US locksmith client, which was a gateway to a 
           slug: "kamaaina-locksmith",
           title: "Kama'aina Locksmith", 
           tags: ["Hawaii SEO", "Local Search"], 
-          image: "https://images.unsplash.com/photo-1540206351-d6465b3ac5c1?auto=format&fit=crop&w=800&q=80",
+          image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
           link: "https://golocksmithhonolulu.com/",
           fullDesc: "Unique local SEO strategy for the Hawaii market (Honolulu & Oahu), emphasis on Mobile search.",
           challenge: "Isolated market with high loyalty to 'Kama'aina' (local) businesses and national brand competition.",
@@ -465,7 +465,7 @@ In 2018, I started working with a US locksmith client, which was a gateway to a 
           slug: "garage-door-kingdom",
           title: "Garage Door Kingdom LLC", 
           tags: ["Branding", "SEO", "Florida"], 
-          image: "https://images.unsplash.com/photo-1599059021750-845100067305?auto=format&fit=crop&w=800&q=80",
+          image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=800&q=80",
           link: "https://garagedoorkingdomllc.biz/",
           fullDesc: "Digital presence enhancement and lead generation for garage doors, gates, and fencing services in Sunrise, FL and throughout Broward County.",
           challenge: "Intense competition in the South Florida market, requiring differentiation through specializations like HVHZ hurricane-rated doors.",
@@ -477,7 +477,7 @@ In 2018, I started working with a US locksmith client, which was a gateway to a 
           slug: "locksmiths-colorado-springs",
           title: "Locksmiths Of Colorado Springs", 
           tags: ["Local SEO", "GMB", "Maps"], 
-          image: "https://images.unsplash.com/photo-1605380591742-835639695d85?q=80&w=800&auto=format&fit=crop",
+          image: "https://images.unsplash.com/photo-1517420879524-86d64ac2f339?auto=format&fit=crop&w=800&q=80",
           link: "https://colorado-locksmith.com/",
           fullDesc: "Dominating local search results (Map Pack) in Colorado Springs for an established brand operating since 2008.",
           challenge: "Establishing dominance in a saturated market against hundreds of competitors while maintaining a reputation of over a decade.",
@@ -489,7 +489,7 @@ In 2018, I started working with a US locksmith client, which was a gateway to a 
           slug: "colorado-dependable-locksmith",
           title: "Colorado Dependable Locksmith", 
           tags: ["Technical SEO", "Highlands Ranch"], 
-          image: "https://images.unsplash.com/photo-1517646272502-78c392f432a5?auto=format&fit=crop&w=800&q=80",
+          image: "https://images.unsplash.com/photo-1543165796-5426273fd303?auto=format&fit=crop&w=800&q=80",
           link: "https://coloradodependablelocksmith.com/",
           fullDesc: "Technical optimization and geo-targeted SEO (Highlands Ranch) for locksmith services in the Greater Denver area.",
           challenge: "Breaking into niche geographic markets south of Denver and building authority as a reliable, fast service (7 AM - Midnight).",
@@ -513,7 +513,7 @@ In 2018, I started working with a US locksmith client, which was a gateway to a 
           slug: "hummus-ashkara",
           title: "Hummus Ashkara", 
           tags: ["Restaurant SEO", "Local"], 
-          image: "https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?q=80&w=800&auto=format&fit=crop",
+          image: "https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?auto=format&fit=crop&w=800&q=80",
           link: "https://hummus-ashkara.co.il/",
           fullDesc: "Digital promotion for a legendary hummus restaurant operating for over 4 decades at Yirmiyahu 45, Tel Aviv.",
           challenge: "Maintaining iconic status for new generations of consumers and competing in the increasingly crowded Tel Aviv culinary scene.",
@@ -525,7 +525,7 @@ In 2018, I started working with a US locksmith client, which was a gateway to a 
           slug: "limor-asayag",
           title: "Limor Asayag - Real Estate", 
           tags: ["Real Estate", "Personal Branding"], 
-          image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800&auto=format&fit=crop",
+          image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800",
           link: "https://limorasay.co.il/",
           fullDesc: "Personal branding and managed site for a leading real estate brokerage in Tel Aviv & Givatayim.",
           challenge: "The real estate market requires high personal trust and premium property presentation.",
@@ -667,6 +667,13 @@ function Layout({ children, lang, setLang, isRtl, t }: any) {
 }
 
 function Home({ t, isRtl }: any) {
+  const iconMap: Record<string, any> = {
+    "01": MapPin,
+    "02": Target,
+    "03": Code,
+    "04": Search
+  };
+
   return (
     <>
       <section className="relative py-20 px-12 overflow-hidden flex items-center min-h-[80vh]">
@@ -714,18 +721,21 @@ function Home({ t, isRtl }: any) {
             transition={{ duration: 0.8 }}
             className="lg:col-span-5 grid grid-cols-2 gap-4"
           >
-            {t.services_brief.map((item: any) => (
-              <div 
-                key={item.id}
-                className={`glass p-6 rounded-2xl flex flex-col space-y-3 transform transition-transform hover:scale-105 ${item.rot} ${item.mt}`}
-              >
-                <div className={`h-10 w-10 bg-blue-500/20 rounded-lg flex items-center justify-center text-blue-400 font-bold`}>
-                  {item.id}
+            {t.services_brief.map((item: any) => {
+              const Icon = iconMap[item.id] || Zap;
+              return (
+                <div 
+                  key={item.id}
+                  className={`glass p-6 rounded-2xl flex flex-col space-y-3 transform transition-transform hover:scale-105 ${item.rot} ${item.mt}`}
+                >
+                  <div className={`h-10 w-10 bg-blue-500/20 rounded-lg flex items-center justify-center text-blue-400 font-bold`}>
+                    <Icon size={20} />
+                  </div>
+                  <h3 className="font-bold text-white">{item.title}</h3>
+                  <p className="text-xs text-gray-500">{item.desc}</p>
                 </div>
-                <h3 className="font-bold text-white">{item.title}</h3>
-                <p className="text-xs text-gray-500">{item.desc}</p>
-              </div>
-            ))}
+              );
+            })}
           </motion.div>
         </div>
       </section>
@@ -818,6 +828,13 @@ function Home({ t, isRtl }: any) {
 }
 
 function Services({ t }: any) {
+  const iconMap: Record<string, any> = {
+    "01": MapPin,
+    "02": Target,
+    "03": Code,
+    "04": Search
+  };
+
   return (
     <div className="py-20 px-12 max-w-7xl mx-auto space-y-24">
       <div className="space-y-4 max-w-2xl">
@@ -830,43 +847,46 @@ function Services({ t }: any) {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-        {t.services_brief.map((s: any, idx: number) => (
-          <motion.div 
-            key={idx}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="glass p-12 rounded-[40px] space-y-8 group hover:bg-white/[0.03] transition-all border border-white/5"
-          >
-            <div className="flex items-start justify-between">
-              <div className="p-5 bg-blue-500/10 rounded-3xl w-fit group-hover:bg-blue-600 group-hover:text-white transition-all text-blue-400">
-                <Zap size={36} />
-              </div>
-              <div className="text-[60px] font-black text-white/5 select-none leading-none">0{idx+1}</div>
-            </div>
-            
-            <div className="space-y-4">
-              <h3 className="text-3xl font-bold text-white tracking-tight leading-tight">{s.title}</h3>
-              <p className="text-gray-400 leading-relaxed text-lg">{s.longDesc}</p>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-white/5">
-              {s.features.map((f: string) => (
-                <div key={f} className="flex items-center gap-3 text-xs text-gray-500 font-bold uppercase tracking-widest">
-                  <CheckCircle2 size={14} className="text-blue-500 shrink-0" />
-                  {f}
-                </div>
-              ))}
-            </div>
-
-            <Link 
-              to="/contact" 
-              className="inline-flex items-center gap-2 text-blue-400 font-black uppercase text-xs tracking-widest group-hover:gap-4 transition-all"
+        {t.services_brief.map((s: any, idx: number) => {
+          const Icon = iconMap[s.id] || Zap;
+          return (
+            <motion.div 
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="glass p-12 rounded-[40px] space-y-8 group hover:bg-white/[0.03] transition-all border border-white/5"
             >
-              Learn More <ArrowLeft className="rotate-180" size={14} />
-            </Link>
-          </motion.div>
-        ))}
+              <div className="flex items-start justify-between">
+                <div className="p-5 bg-blue-500/10 rounded-3xl w-fit group-hover:bg-blue-600 group-hover:text-white transition-all text-blue-400">
+                  <Icon size={36} />
+                </div>
+                <div className="text-[60px] font-black text-white/5 select-none leading-none">0{idx+1}</div>
+              </div>
+              
+              <div className="space-y-4">
+                <h3 className="text-3xl font-bold text-white tracking-tight leading-tight">{s.title}</h3>
+                <p className="text-gray-400 leading-relaxed text-lg">{s.longDesc}</p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-white/5">
+                {s.features.map((f: string) => (
+                  <div key={f} className="flex items-center gap-3 text-xs text-gray-500 font-bold uppercase tracking-widest">
+                    <CheckCircle2 size={14} className="text-blue-500 shrink-0" />
+                    {f}
+                  </div>
+                ))}
+              </div>
+
+              <Link 
+                to="/contact" 
+                className="inline-flex items-center gap-2 text-blue-400 font-black uppercase text-xs tracking-widest group-hover:gap-4 transition-all"
+              >
+                Learn More <ArrowLeft className="rotate-180" size={14} />
+              </Link>
+            </motion.div>
+          );
+        })}
       </div>
     </div>
   );
@@ -972,10 +992,18 @@ function About({ t }: any) {
         >
           <div className="absolute -inset-4 bg-gradient-to-tr from-blue-600 to-indigo-600 opacity-20 blur-3xl rounded-[40px] group-hover:opacity-40 transition-opacity" />
           <div className="glass p-3 rounded-[40px] overflow-hidden relative shadow-2xl">
-             <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800" className="rounded-[32px] grayscale hover:grayscale-0 transition-all duration-1000 w-full shadow-inner" alt="Yossi - YA Ace Media Founder" referrerPolicy="no-referrer" />
+             <img 
+               src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800" 
+               className="rounded-[32px] grayscale hover:grayscale-0 transition-all duration-1000 w-full shadow-inner aspect-[3/4] object-cover" 
+               alt="Yossi - YA Ace Media Founder" 
+               referrerPolicy="no-referrer"
+               onError={(e) => {
+                 (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=800';
+               }}
+             />
              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-10">
                 <div className="text-blue-400 font-black text-xs uppercase tracking-widest mb-1">Based in Israel</div>
-                <div className="text-white font-black text-3xl uppercase tracking-tighter italic">YOSSI ASAYAG</div>
+                <div className="text-white font-black text-4xl uppercase tracking-tighter italic leading-none">YOSSI ASAYAG</div>
              </div>
           </div>
         </motion.div>
@@ -1109,6 +1137,7 @@ function Contact({ t }: any) {
 }
 
 function Calculator({ t }: any) {
+  const navigate = useNavigate();
   const [revenue, setRevenue] = useState(10000);
   const [conversion, setConversion] = useState(2);
   const [traffic, setTraffic] = useState(5000);
